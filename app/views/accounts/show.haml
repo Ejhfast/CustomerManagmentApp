@@ -11,3 +11,17 @@
 = link_to 'Edit', edit_account_path(@account)
 |
 \#{link_to 'Back', accounts_path}
+
+%hr
+- @account.accountactions.each do |action|
+  %p 
+    = action.created_at
+    |
+    = action.description.split(' ').first(10).join(' ') + "..."
+    |
+    = link_to 'Edit', edit_accountaction_path(action)
+    |
+    = link_to 'Delete', accountaction_path(action), :method => :delete
+  %hr	
+
+= link_to 'New Action', new_accountaction_path

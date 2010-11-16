@@ -7,6 +7,11 @@
       %ul
         - @accountaction.errors.full_messages.each do |msg|
           %li= msg
+
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
   .field
     = f.label :description
     %br/
@@ -15,5 +20,7 @@
     = f.label :category_id
     %br/
     = f.text_field :category_id
+  .field
+    = f.hidden_field :account_id, :value => current_account_id
   .actions
     = f.submit
