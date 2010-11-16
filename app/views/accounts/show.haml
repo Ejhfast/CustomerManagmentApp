@@ -8,16 +8,15 @@
 %p
   %b Email:
   = @account.email
-= link_to 'Edit', edit_account_path(@account)
-|
-\#{link_to 'Back', accounts_path}
 
+%br
+%h2 Recent History
 %hr
 - @account.accountactions.each do |action|
   %p 
     = action.created_at
     |
-    = action.description.split(' ').first(10).join(' ') + "..."
+    = action.description.split(' ').first(15).join(' ')
     |
     = link_to 'Edit', edit_accountaction_path(action)
     |

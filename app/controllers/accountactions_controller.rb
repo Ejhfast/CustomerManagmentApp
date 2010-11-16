@@ -30,6 +30,7 @@ class AccountactionsController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @accountaction }
     end
+
   end
 
   # GET /accountactions/1/edit
@@ -44,11 +45,9 @@ class AccountactionsController < ApplicationController
 
     respond_to do |format|
       if @accountaction.save
-        format.html { redirect_to(@accountaction, :notice => 'Accountaction was successfully created.') }
-        format.xml  { render :xml => @accountaction, :status => :created, :location => @accountaction }
+        format.html { redirect_to( account_path(current_account_id), :notice => 'Accountaction was successfully created.') }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @accountaction.errors, :status => :unprocessable_entity }
       end
     end
   end

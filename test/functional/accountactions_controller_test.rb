@@ -3,6 +3,8 @@ require 'test_helper'
 class AccountactionsControllerTest < ActionController::TestCase
   setup do
     @accountaction = accountactions(:one)
+    @account = accounts(:one)
+    @account.save
   end
 
   test "should get index" do
@@ -21,7 +23,7 @@ class AccountactionsControllerTest < ActionController::TestCase
       post :create, :accountaction => @accountaction.attributes
     end
 
-    assert_redirected_to accountaction_path(assigns(:accountaction))
+    assert_redirected_to account_path(@account)
   end
 
   test "should show accountaction" do
