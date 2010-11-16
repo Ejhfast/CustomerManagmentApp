@@ -1,0 +1,17 @@
+%h1 Listing usereffects
+%table
+  %tr
+    %th User
+    %th Action
+    %th
+    %th
+    %th
+  - @usereffects.each do |usereffect|
+    %tr
+      %td= usereffect.user_id
+      %td= usereffect.action_id
+      %td= link_to 'Show', usereffect
+      %td= link_to 'Edit', edit_usereffect_path(usereffect)
+      %td= link_to 'Destroy', usereffect, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Usereffect', new_usereffect_path

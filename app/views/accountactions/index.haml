@@ -1,0 +1,17 @@
+%h1 Listing accountactions
+%table
+  %tr
+    %th Description
+    %th Category
+    %th
+    %th
+    %th
+  - @accountactions.each do |accountaction|
+    %tr
+      %td= accountaction.description
+      %td= accountaction.category_id
+      %td= link_to 'Show', accountaction
+      %td= link_to 'Edit', edit_accountaction_path(accountaction)
+      %td= link_to 'Destroy', accountaction, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Accountaction', new_accountaction_path

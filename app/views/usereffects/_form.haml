@@ -1,0 +1,19 @@
+= form_for(@usereffect) do |f|
+  - if @usereffect.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@usereffect.errors.count, "error")
+        prohibited this usereffect from being saved:
+      %ul
+        - @usereffect.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :user_id
+    %br/
+    = f.text_field :user_id
+  .field
+    = f.label :action_id
+    %br/
+    = f.text_field :action_id
+  .actions
+    = f.submit

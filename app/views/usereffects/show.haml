@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %b User:
+  = @usereffect.user_id
+%p
+  %b Action:
+  = @usereffect.action_id
+= link_to 'Edit', edit_usereffect_path(@usereffect)
+|
+\#{link_to 'Back', usereffects_path}

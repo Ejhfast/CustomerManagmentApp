@@ -1,14 +1,14 @@
 Tranquility::Application.routes.draw do
+  
+  get "landing/index"
+
   resources :categories
-
   resources :usereffects
-
   resources :accountactions
-
   resources :customers
-
   resources :accounts
 
+  root :to => 'landing#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
