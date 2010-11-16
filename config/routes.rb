@@ -1,4 +1,6 @@
 Tranquility::Application.routes.draw do
+  resources :categories
+
   resources :usereffects
 
   resources :accountactions
