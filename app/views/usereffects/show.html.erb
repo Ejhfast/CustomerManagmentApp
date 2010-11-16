@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @usereffect.user_id %>
+</p>
+
+<p>
+  <b>Action:</b>
+  <%= @usereffect.action_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_usereffect_path(@usereffect) %> |
+<%= link_to 'Back', usereffects_path %>
